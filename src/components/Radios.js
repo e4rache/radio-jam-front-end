@@ -14,9 +14,7 @@ class Radios extends Component {
     console.log("Radios.loadRadios() - about to fetch()");
     try {
       const api_call = await fetch(`${API_URL}`);
-      console.log("0000000000000000000");
       let radioArray = await api_call.json();
-      console.log("Radios.loadRadios() radioArray", radioArray);
       radioArray = radioArray.radios;
       console.log("Radios.loadRadios() - radioArray", radioArray);
       this.setState({ radioArray, isLoading: false });
@@ -26,7 +24,6 @@ class Radios extends Component {
   };
 
   componentDidMount = () => {
-    console.log("conponentDidMount()");
     this.loadRadios();
   };
 
@@ -36,25 +33,37 @@ class Radios extends Component {
       return <Loader />;
     } else {
       return (
-        <div>
-          <Collection className="row red-text z-depth-2" header="Radios">
+        <div className="grey darken-3">
+          <div className="col s12">
+            <h5>Radios</h5>
+          </div>
+          <Collection className="row red-text z-depth-2">
             {radioArray.map(radio => {
               return (
-                <CollectionItem className="col" key={radio._id}>
-                  <div className="col s2">
-                    <Card className="green lighten-2 black-text">
+                <CollectionItem
+                  className="grey darken-3 col s12"
+                  key={radio._id}
+                >
+                  <div className="col s4 offset-s4">
+                    <Card className="orange darken-3 black-text">
                       {radio.name}
                     </Card>
                   </div>
-                  <div className="black-text col s10">{radio.brand}</div>
-                  <div className="black-text col s10">{radio.model}</div>
-                  <div className="black-text col s10">{radio.description}</div>
+                  <span className="black white-text col s12">
+                    Brand : {radio.brand}
+                  </span>
+                  <span className="black white-text col s12">
+                    Model : {radio.model}
+                  </span>
+                  <div className="black white-text col s12">
+                    Description : {radio.description}
+                  </div>
                 </CollectionItem>
               );
             })}
           </Collection>
           <Button
-            className="grey z-depth-2"
+            className="blue-grey darken-4 z-depth-2"
             onClick={this.loadRadios}
             waves="light"
           >

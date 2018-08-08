@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="blue-grey darken-2 container">
+        <div className="grey darken-3 container">
           <header>
             <Navigation />
           </header>
