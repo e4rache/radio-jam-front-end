@@ -18,7 +18,9 @@ class Radio extends Component {
   componentDidMount() {
     this.loadRadio(this.state.id);
   }
-
+  componentWillReceiveProps() {
+    this.loadRadio(this.state.id);
+  }
   cancelOnClick = e => {
     console.log("Radio.cancelOnClick()");
     this.loadRadio(this.state.id);
