@@ -15,6 +15,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="grey darken-3 container">
+          <br />
           <header>
             <Navigation />
           </header>
@@ -23,8 +24,8 @@ class App extends Component {
             <Route path="/" component={Home} exact />
             <Route path="/radios" component={Radios} exact />
             <Route path="/radios/:id" component={Radio} />
-            <Route path="/tubes" component={Tubes} exact />
-            <Route path="/login" component={Login} exact />
+            <Route path="/tubes" component={Tubes} />
+            <Route path="/login" component={Login} />
             <Route component={Http404} />
           </Switch>
         </div>

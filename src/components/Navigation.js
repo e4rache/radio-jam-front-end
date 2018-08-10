@@ -9,7 +9,7 @@ class Navigation extends Component {
     return (
       <div>
         <div className="row grey darken-3 ">
-          <Link className="col s12 m4" to="Radios">
+          <Link className="col s12 m4" to="/radios/">
             <Button className={`${buttonCollor}`} waves="light">
               Radios
               <Icon small left>
@@ -17,7 +17,7 @@ class Navigation extends Component {
               </Icon>
             </Button>
           </Link>
-          <Link className="col s12 m4" to="Tubes">
+          <Link className="col s12 m4" to="/tubes/">
             <Button className={`${buttonCollor}`} waves="light">
               Tubes
               <Icon small left>
@@ -25,7 +25,7 @@ class Navigation extends Component {
               </Icon>
             </Button>
           </Link>
-          <Link className="col s12 m4" to="login">
+          <Link className="col s12 m4" to="/login/">
             <Button className={`${buttonCollor}`} waves="light">
               Login
               <Icon small left>
