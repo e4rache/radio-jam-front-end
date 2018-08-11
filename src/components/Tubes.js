@@ -1,8 +1,8 @@
-import { Component } from "react";
+import React, { Component } from 'react'
 class Tubes extends Component {
-  state = {};
+  state = {}
   render() {
-    return "tubes";
+    return <h5 className="grey-text">tubes</h5>;
   }
 }
 

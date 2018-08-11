@@ -1,9 +1,9 @@
-import { Component } from "react";
+import React, { Component } from 'react'
 class Login extends Component {
-  state = {};
+  state = {}
   render() {
-    return "login";
+    return <h5 className='grey-text'>login</h5>
   }
 }
 
-export default Login;
+export default Login
