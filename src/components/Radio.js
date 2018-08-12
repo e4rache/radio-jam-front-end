@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { Icon, Button, Row } from 'react-materialize'
 import Loader from './Loader'
+import Global from '../Global'
 
-const API_URL = 'http://localhost:3000/radios/'
+const API_URL = Global.API_URL + 'radios/'
 
 class Radio extends Component {
 

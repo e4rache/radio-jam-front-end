@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { Row, Button, Icon } from "react-materialize"
+import { Row, Button, Icon } from 'react-materialize'
+import Global from '../Global'
 
-const API_URL = "http://localhost:3000/radios/"
+const API_URL = Global.API_URL + 'radios/'
 
 class NewRadio extends Component {
     state = { radio: undefined }
