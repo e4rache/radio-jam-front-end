@@ -2,7 +2,12 @@ import React, { Component } from "react"
 class Home extends Component {
   state = {}
   render() {
-    return <h1 className='grey-text'>home</h1>
+    return (<div className='col s12 grey-text'>
+      <h5>Radio-Jam Sr&Jr</h5><span> v0.1 beta</span>
+      <br />
+      <br />
+      <img src='img/tubes.jpg' alt='tubes' width='640px' height='377px' />
+    </div>)
   }
 }
 

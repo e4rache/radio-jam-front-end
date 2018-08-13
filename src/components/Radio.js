@@ -53,11 +53,14 @@ class Radio extends Component {
     const radio = this.state.radio;
     console.log('Radio.updateRadio(id) - radio)', radio)
     console.log('Radio.updateRadio(id) - about to fetch()')
+    const headers = {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${Global.JWT}`
+    }
+    console.log('Radio.updateRadio(id) - headers', headers)
     const api_call = await fetch(`${API_URL}${id}`, {
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
+      headers,
       method: 'PATCH',
       body: JSON.stringify(radio)
     })
@@ -72,13 +75,13 @@ class Radio extends Component {
     this.setState({
       radio
     })
-    console.log('Radio.change(e) - this.state', this.state)
+    //console.log('Radio.change(e) - this.state', this.state)
   }
 
   render() {
     const { radio, isLoading, id } = this.state
 
-    console.log('Radio.render() - this.state.id', id)
+    //console.log('Radio.render() - this.state.id', id)
     //console.log('Radio.rander() - this.state.radio', this.state.radio);
 
     if (isLoading) {

@@ -33,6 +33,7 @@ class Login extends Component {
     })
     res = await res.json()
     Global.JWT = res.token
+    console.log('Login.loginOnClick - Global.JWT', Global.JWT)
     console.log('Login.loginOnClick - res', res)
   }
 

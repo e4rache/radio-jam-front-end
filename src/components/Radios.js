@@ -19,7 +19,8 @@ class Radios extends Component {
       {
         headers: {
           Accept: "application/json",
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          'Authorization': `Bearer ${Global.JWT}`
         },
         method: "DELETE"
       }

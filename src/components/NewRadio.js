@@ -14,7 +14,8 @@ class NewRadio extends Component {
             {
                 headers: {
                     Accept: "application/json",
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "Authorization": `bearer ${Global.JWT}`
                 },
                 method: 'POST',
                 body: JSON.stringify(radio)
@@ -39,7 +40,7 @@ class NewRadio extends Component {
         this.setState({
             radio
         });
-        console.log("NewRadio.change(e) - this.state", this.state);
+        //console.log("NewRadio.change(e) - this.state", this.state);
     };
 
     render() {
@@ -87,7 +88,7 @@ class NewRadio extends Component {
                         <textarea
                             id="description"
                             name="description"
-                            class="grey-text validate"
+                            className="grey-text validate"
                             style={{ height: "20em" }}
                             onChange={this.onChange}
                             value={radio.description}

@@ -10,11 +10,7 @@ import NewRadio from './components/NewRadio'
 import Tubes from './components/Tubes'
 import Login from './components/Login'
 import Http404 from './components/Http404'
-
 import Global from './Global'
-
-const global = new Global()
-
 
 class App extends Component {
 
