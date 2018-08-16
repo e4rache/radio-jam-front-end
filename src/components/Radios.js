@@ -27,6 +27,7 @@ class Radios extends Component {
     )
     const result = await api_call.json()
     console.log('Radios.deleteRadio(id) - result', result)
+    this.loadRadios()
   }
 
   loadRadios = async () => {
@@ -42,20 +43,9 @@ class Radios extends Component {
     }
   }
 
-  componentDidMount = () => {
-    console.log('Radios.componentDidMount()')
-    this.loadRadios();
-  }
-
-  componentWillReceiveProps = () => {
-    console.log('Radios.componentWillRecieveProps()')
-    this.loadRadios()
-  }
-
-  shouldComponentUpdate = () => {
-    console.log('Radios.shouldComponentUpdate()')
-    //setTimeout(this.loadRadios, 3000)
-    return true;
+  componentWillMount = async () => {
+    console.log('Radios.componentWillMount()')
+    await this.loadRadios();
   }
 
   render = () => {
@@ -88,7 +78,7 @@ class Radios extends Component {
                   >
 
                     <div className='col s4 offset-s4'>
-                      <Link to={`/radios/${radio._id}`}>
+                      <Link to={{ pathname: `/radios/${radio._id}` }} >
                         <Card className='orange darken-3 black-text'>
                           {radio.name}
                         </Card>

@@ -30,10 +30,10 @@ class Radio extends Component {
     this.loadRadio(this.state.id)
   }
 
-  saveOnClick = e => {
+  saveOnClick = async e => {
     console.log('Radio.saveOnclick()')
-    this.updateRadio(this.state.id)
-    this.props.history.push('/radios')
+    await this.updateRadio(this.state.id)
+    await this.props.history.push('/radios')
   };
 
   loadRadio = async id => {
@@ -67,7 +67,7 @@ class Radio extends Component {
 
     let result = await api_call.json()
     console.log('Radio.updateRadio() - result', result)
-  };
+  }
 
   onChange = e => {
     let radio = { ...this.state.radio }
