@@ -11,7 +11,8 @@ class Login extends Component {
     super(props)
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      failedLogin: false
     }
   }
 
@@ -33,6 +34,12 @@ class Login extends Component {
     })
     res = await res.json()
     Global.JWT = res.token
+    if (Global.JWT) {
+      this.props.history.push('/radios')
+    } else {
+      this.setState({ failedLogin: true })
+    }
+
     console.log('Login.loginOnClick - Global.JWT', Global.JWT)
     console.log('Login.loginOnClick - res', res)
   }
@@ -41,8 +48,7 @@ class Login extends Component {
     const { email, password } = this.state
     return (
       <div>
-
-        <h5 className='grey-text'>login</h5>
+        {this.state.failedLogin ? <h6 className="red-text">login failed. please retry.</h6> : <h5 className='grey-text'>Login</h5>}
 
         {/*<Row>*/}
 
