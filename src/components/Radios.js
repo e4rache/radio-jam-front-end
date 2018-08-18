@@ -56,7 +56,9 @@ class Radios extends Component {
       return <Loader />
     } else {
       return (
+
         <div>
+
           <div className='col s12 grey-text'>
             <h5>Radios</h5>
             <Link className='col s12 m4' to='/newradio/'>
@@ -68,10 +70,12 @@ class Radios extends Component {
               </Button>
             </Link>
           </div>
+
           <Collection className='row z-depth-2'>
             {radioArray.map(radio => {
               return (
-                <div key={radio._id}>
+                <div key={radio._id} className='col s12'>
+
                   <CollectionItem
                     className='grey darken-3 col s12'
                     key={radio._id}
@@ -83,7 +87,13 @@ class Radios extends Component {
                           {radio.name}
                         </Card>
                       </Link>
+                      <Button
+                        className='red'
+                        onClick={e => (this.deleteRadio(radio._id))}><Icon small >
+                          delete
+                  </Icon></Button>
                     </div>
+
                     <span className='black white-text col s12'>
                       Brand : {radio.brand}
                     </span>
@@ -91,13 +101,11 @@ class Radios extends Component {
                       Model : {radio.model}
                     </span>
                     <div className='black white-text col s12'>
-                      Description : {radio.description}
+                      <div>Description :</div>
+                      <div>
+                        <textarea disabled style={{ height: '10em', padding: '10px' }}>{radio.description}</textarea>
+                      </div>
                     </div>
-                    <Button
-                      className='red'
-                      onClick={e => (this.deleteRadio(radio._id))}><Icon small >
-                        delete
-                  </Icon></Button>
 
                   </CollectionItem>
 
@@ -105,6 +113,7 @@ class Radios extends Component {
               )
             })}
           </Collection>
+          {/**
           <Button
             className='blue-grey darken-4 z-depth-2'
             onClick={this.loadRadios}
@@ -112,6 +121,7 @@ class Radios extends Component {
           >
             Reload
           </Button>
+          **/}
         </div>
       )
     }

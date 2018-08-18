@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Icon, Row } from 'react-materialize'
 
+import Loader from './Loader'
 import Global from '../Global'
 
 const API_URL = Global.API_URL + 'users/login/'
@@ -12,7 +13,8 @@ class Login extends Component {
     this.state = {
       email: '',
       password: '',
-      failedLogin: false
+      failedLogin: false,
+      isLoading: false
     }
   }
 
@@ -21,6 +23,7 @@ class Login extends Component {
   }
 
   loginOnClick = async e => {
+    this.setState({ isLoading: true })
     console.log('Login.loginOnClick - this.state', this.state)
     const { email, password } = this.state
     const body = { email, password }
@@ -39,7 +42,7 @@ class Login extends Component {
     } else {
       this.setState({ failedLogin: true })
     }
-
+    this.setState({ isLoading: false })
     console.log('Login.loginOnClick - Global.JWT', Global.JWT)
     console.log('Login.loginOnClick - res', res)
   }
@@ -48,6 +51,8 @@ class Login extends Component {
     const { email, password } = this.state
     return (
       <div>
+        {this.state.isLoading ? <Loader /> : null}
+
         {this.state.failedLogin ? <h6 className="red-text">login failed. please retry.</h6> : <h5 className='grey-text'>Login</h5>}
 
         {/*<Row>*/}
