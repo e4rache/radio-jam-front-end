@@ -138,7 +138,7 @@ class Radio extends Component {
           <Row>
             <div className='col s6'>
               <Button
-                className='red darken-2'
+                className='red darken-2 hoverable'
                 onClick={this.cancelOnClick}
                 waves='light'
               >
@@ -150,7 +150,7 @@ class Radio extends Component {
             </div>
             <div className='col s6'>
               <Button
-                className='green darken-2'
+                className='green darken-2 hoverable'
                 onClick={this.saveOnClick}
                 waves='light'
               >

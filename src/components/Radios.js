@@ -43,8 +43,8 @@ class Radios extends Component {
     }
   }
 
-  componentWillMount = async () => {
-    console.log('Radios.componentWillMount()')
+  componentDidMount = async () => {
+    console.log('Radios.componentDidMount()')
     await this.loadRadios();
   }
 
@@ -61,7 +61,7 @@ class Radios extends Component {
 
           <div className='col s12 grey-text'>
             <h5>Radios</h5>
-            <Link className='col s12 m4' to='/newradio/'>
+            <Link className='col s12 m4 hoverable' to='/newradio/'>
               <Button className='blue-grey darken-4' waves='light'>
                 add a radio
               <Icon small left>
@@ -83,12 +83,12 @@ class Radios extends Component {
 
                     <div className='col s4 offset-s4'>
                       <Link to={{ pathname: `/radios/${radio._id}` }} >
-                        <Card className='orange darken-3 black-text'>
+                        <Card className='orange darken-3 black-text hoverable'>
                           {radio.name}
                         </Card>
                       </Link>
                       <Button
-                        className='red'
+                        className='red hoverable'
                         onClick={e => (this.deleteRadio(radio._id))}><Icon small >
                           delete
                   </Icon></Button>
@@ -103,7 +103,7 @@ class Radios extends Component {
                     <div className='black white-text col s12'>
                       <div>Description :</div>
                       <div>
-                        <textarea disabled style={{ height: '10em', padding: '10px' }}>{radio.description}</textarea>
+                        <textarea disabled style={{ height: '10em', padding: '10px' }} value={radio.description} />
                       </div>
                     </div>
 

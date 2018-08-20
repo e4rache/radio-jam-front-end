@@ -40,9 +40,9 @@ class Login extends Component {
     if (Global.JWT) {
       this.props.history.push('/radios')
     } else {
-      this.setState({ failedLogin: true })
+      this.setState({ failedLogin: true, isLoading: false })
     }
-    this.setState({ isLoading: false })
+
     console.log('Login.loginOnClick - Global.JWT', Global.JWT)
     console.log('Login.loginOnClick - res', res)
   }
@@ -83,7 +83,7 @@ class Login extends Component {
 
         <div className='col s6'>
           <Button
-            className='green darken-2'
+            className='green darken-2 hoverable'
             onClick={this.loginOnClick}
             waves='light'
           >
