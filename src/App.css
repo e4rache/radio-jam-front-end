@@ -1,19 +1,25 @@
 * {
   box-sizing: border-box;
   margin: 0px;
-  border-radius: 5px;
+  border-radius: 0px;
   /* border: 1px solid black; */
 }
 
+/*
 .magrin-auto {
   margin: auto;
   width: 50%;
   padding: 10px;
 }
+*/
 
+
+/*
 .App-header {
-  /*background-color: #222;*/
+  background-color: #222;
   height: 150px;
   padding: 20px;
   color: white;
 }
+*/
+

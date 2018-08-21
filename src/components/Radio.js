@@ -123,16 +123,18 @@ class Radio extends Component {
               />
               <label htmlFor='model'>Model</label>
             </div>
-            <div className='col s12'>
+            <div className='input-field col s12 '>
               <textarea
                 id='description'
                 name='description'
-                className='grey-text validate'
+                className='grey-text __materialize-textarea validate'
                 style={{ height: '20em' }}
                 onChange={this.onChange}
                 value={radio.description}
               />
-              <label htmlFor='description'>Description</label>
+              {/*
+              <label htmlFor='description active'>Description</label>
+              */}
             </div>
           </Row>
           <Row>

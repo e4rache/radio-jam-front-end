@@ -50,7 +50,7 @@ class Login extends Component {
   render() {
     const { email, password } = this.state
     return (
-      <div>
+      <div className='row'>
         {this.state.isLoading ? <Loader /> : null}
 
         {this.state.failedLogin ? <h6 className="red-text">login failed. please retry.</h6> : <h5 className='grey-text'>Login</h5>}
@@ -59,14 +59,14 @@ class Login extends Component {
 
         <div className='input-field col s6'>
           <input
-            name='email'
             id='email'
+            name='email'
             type='email'
-            className='grey-text validate'
+            className='grey-text validate '
             value={email}
             onChange={this.onChange}
           />
-          <label htmlFor='email'>Email</label>
+          <label className='active' htmlFor='email'>Email</label>
         </div>
 
         <div className='input-field col s6'>
@@ -74,14 +74,16 @@ class Login extends Component {
             id='password'
             name='password'
             type='password'
-            className='grey-text validate'
+            className='grey-text'
             value={password}
             onChange={this.onChange}
           />
           <label htmlFor='password'>Password</label>
         </div>
 
-        <div className='col s6'>
+        <div className='col s12' style={{ height: '50px' }}></div>
+
+        <div className='col s12'>
           <Button
             className='green darken-2 hoverable'
             onClick={this.loginOnClick}

@@ -69,50 +69,74 @@ class Radios extends Component {
               </Icon>
               </Button>
             </Link>
+            <div className='col s12' style={{height:'10px'}}/>
           </div>
 
-          <Collection className='row z-depth-2'>
+          <div className='row'>
             {radioArray.map(radio => {
               return (
                 <div key={radio._id} className='col s12'>
 
-                  <CollectionItem
+                  <div style={{height:'10px'}} />
+                  <div
                     className='grey darken-3 col s12'
                     key={radio._id}
+                    style={{border:'1px solid white',borderRadius:'2px'}}
                   >
-
-                    <div className='col s4 offset-s4'>
+                    
+                    <div className='col s6'>
                       <Link to={{ pathname: `/radios/${radio._id}` }} >
                         <Card className='orange darken-3 black-text hoverable'>
                           {radio.name}
                         </Card>
                       </Link>
+                    </div>
+                    <div className='col s4'/>
+                    <div className='col s1' >
+                      <div style={{height:'20px'}}/>
+                                         
                       <Button
                         className='red hoverable'
-                        onClick={e => (this.deleteRadio(radio._id))}><Icon small >
+                        style={{verticalAlign: 'middle'}}
+                        onClick={e => (this.deleteRadio(radio._id))}>
+                          <Icon small >
                           delete
-                  </Icon></Button>
+                          </Icon>
+                      </Button>
                     </div>
 
-                    <span className='black white-text col s12'>
-                      Brand : {radio.brand}
+                    <span className='white-text col s12' style={{textAlign:'left'}}>
+                      {radio.brand} - {radio.model}
                     </span>
-                    <span className='black white-text col s12'>
-                      Model : {radio.model}
+                    
+                    <span className='white-text col s12'>
+                      
                     </span>
-                    <div className='black white-text col s12'>
-                      <div>Description :</div>
+
+                    <div className='grey darken-2 white-text col s12 z-depth-1'>
                       <div>
-                        <textarea disabled style={{ height: '10em', padding: '10px' }} value={radio.description} />
+                        <textarea
+                          className='
+                            materialize-textarea
+                            white-text
+                            ' 
+                          disabled 
+                          style={{ 
+                            height: '10em', 
+                            padding: '10px' 
+                          }} 
+                          value={radio.description}
+                        />
                       </div>
+                      
                     </div>
-
-                  </CollectionItem>
+                    <div className='col s12'style={{height:'10px'}} />
+                  </div>
 
                 </div>
               )
             })}
-          </Collection>
+          </div>
           {/**
           <Button
             className='blue-grey darken-4 z-depth-2'
