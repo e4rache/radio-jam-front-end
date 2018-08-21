@@ -105,7 +105,7 @@ class Radios extends Component {
                       </Button>
                     </div>
 
-                    <span className='white-text col s12' style={{textAlign:'left'}}>
+                    <span className='black white-text col s12' style={{textAlign:'left'}}>
                       {radio.brand} - {radio.model}
                     </span>
                     
