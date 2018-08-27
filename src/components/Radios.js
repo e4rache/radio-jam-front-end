@@ -98,7 +98,11 @@ class Radios extends Component {
                       <Button
                         className='red hoverable'
                         style={{verticalAlign: 'middle'}}
-                        onClick={e => (this.deleteRadio(radio._id))}>
+                        onClick={
+                          e => {
+                            if(window.confirm('are you sure you want to delete this radio ?') ) this.deleteRadio(radio._id)
+                          }
+                        }>
                           <Icon small >
                           delete
                           </Icon>
@@ -137,15 +141,6 @@ class Radios extends Component {
               )
             })}
           </div>
-          {/**
-          <Button
-            className='blue-grey darken-4 z-depth-2'
-            onClick={this.loadRadios}
-            waves='light'
-          >
-            Reload
-          </Button>
-          **/}
         </div>
       )
     }
