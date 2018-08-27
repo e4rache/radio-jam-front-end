@@ -87,7 +87,7 @@ class Radios extends Component {
                     <div className='col s6'>
                       <Link to={{ pathname: `/radios/${radio._id}` }} >
                         <Card className='orange darken-3 black-text hoverable'>
-                          {radio.name}
+                          {radio.brand+' - '+radio.model}
                         </Card>
                       </Link>
                     </div>
@@ -110,7 +110,7 @@ class Radios extends Component {
                     </div>
 
                     <span className='black white-text col s12' style={{textAlign:'left'}}>
-                      {radio.brand} - {radio.model}
+                      Description
                     </span>
                     
                     <span className='white-text col s12'>

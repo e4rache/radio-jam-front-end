@@ -92,17 +92,6 @@ class Radio extends Component {
           <Row>
             <div className='input-field col s12'>
               <input
-                name='name'
-                id='name'
-                type='text'
-                className='grey-text validate'
-                value={radio.name}
-                onChange={this.onChange}
-              />
-              <label htmlFor='name'>Name</label>
-            </div>
-            <div className='input-field col s12'>
-              <input
                 name='brand'
                 id='brand'
                 type='text'
@@ -123,6 +112,21 @@ class Radio extends Component {
               />
               <label htmlFor='model'>Model</label>
             </div>
+
+            <div className='input-field col s12'>
+              <input
+                name='serialNumber'
+                id='serialNumber'
+                type='text'
+                className='grey-text validate'
+                value={radio.serialNumber}
+                onChange={this.onChange}
+              />
+              <label htmlFor='model'>Serial Number</label>
+            </div>
+
+
+
             <div className='input-field col s12 '>
               <textarea
                 id='description'
