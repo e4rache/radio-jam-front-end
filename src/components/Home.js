@@ -10,7 +10,7 @@ class Home extends Component {
 
         <h5>Radio-Jam Sr&Jr</h5>
 
-        <span> v0.1 beta 2018.08.27-02</span>
+        <span> v0.1 beta 2018.10.17-01</span>
 
         <div style={{ height: '40px' }} />
 
