@@ -5,7 +5,31 @@ import Global from '../Global'
 const API_URL = Global.API_URL + 'radios/'
 
 class NewRadio extends Component {
-    state = { radio: undefined }
+
+
+    constructor(props) {
+        super(props)
+        this.state = { radio: {} }
+        this.state.radio.description =
+            `1 DONNEES GENERALES
+1.1 Style :
+1.2 Année de fabrication :
+1.3 Date d'achat:               Montant :
+1.4 Lieu d'achat:
+1.5 Tension  AC          DC     
+1.6 Schéma   oui    Classement :
+                 non
+2 TESTS EFFECTUES.
+2.1 Résistance enroulement primare TFO
+2.2 Contrôle Tensions secondaires TFO : ,
+2.3 Contrôle Tensions redressées :
+
+
+3. FONCTIONNEMENT      OK      Oui       Non
+
+4. PROBLEMES A REGLER
+`
+    }
 
     saveRadio = async () => {
         const radio = this.state.radio
@@ -44,26 +68,7 @@ class NewRadio extends Component {
     };
 
     render() {
-        const radio = {}
-        radio.description =
-            `1 DONNEES GENERALES
-   1.1 Style :
-   1.2 Année de fabrication :
-   1.3 Date d'achat:               Montant :
-   1.4 Lieu d'achat:
-   1.5 Tension  AC          DC     
-   1.6 Schéma   oui    Classement :
-                         non
-2 TESTS EFFECTUES.
-   2.1 Résistance enroulement primare TFO
-   2.2 Contrôle Tensions secondaires TFO : ,
-   2.3 Contrôle Tensions redressées :
-
-
-3. FONCTIONNEMENT      OK      Oui       Non
-
-4. PROBLEMES A REGLER
-`
+        const radio = this.state.radio
         return (
             <div className="">
                 <span>New Radio</span>
